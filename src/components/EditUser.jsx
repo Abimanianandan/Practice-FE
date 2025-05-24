@@ -18,7 +18,7 @@ const EditUser = () => {
     },[])
     const getData = async() =>{
         try {
-             const res = await axios.get(`http://localhost:4001/api/user/${id}`)
+             const res = await axios.get(`https://practice-be-nd0k.onrender.com/api/user/${id}`)
              setEditUser(res.data.user)
         } catch (error) {
             console.log(error.message);        
@@ -32,7 +32,7 @@ const EditUser = () => {
       const handleSubmit = async(e) =>{
         e.preventDefault()
         try {
-              const res = await axios.put(`http://localhost:4001/api/user/${id}`,editUser)
+              const res = await axios.put(`https://practice-be-nd0k.onrender.com/api/user/${id}`,editUser)
               alert("user updated successfully")              
               setUsers(res.data.users)
               setEditUser({name:"",password:"",age:"",education:""})

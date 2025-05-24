@@ -16,7 +16,7 @@ const Register = () => {
            const handleSubmit = async(e) =>{
                 e.preventDefault()
                 try {
-                      const res = await axios.post("http://localhost:4001/api/user/register",newUser)
+                      const res = await axios.post("https://practice-be-nd0k.onrender.com/api/user/register",newUser)
                       alert("user created successfully")              
                       setUsers(res.data.users)
                       setNewUser({name:"",password:"",age:"",education:""})

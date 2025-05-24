@@ -12,7 +12,7 @@ const Login = () => {
      const handleSubmit = async(e) =>{
                 e.preventDefault()
                 try {
-                      const res = await axios.post("http://localhost:4001/api/user/login",data)
+                      const res = await axios.post("https://practice-be-nd0k.onrender.com/api/user/login",data)
                       if (res.data.token) {
                         localStorage.setItem("token", res.data.token);
                         }

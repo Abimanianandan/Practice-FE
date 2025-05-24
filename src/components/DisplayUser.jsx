@@ -17,7 +17,7 @@ const DisplayUser = () => {
     },[deleteUser])
     const fetchData = async() =>{
         try {
-             const res = await axios.get("http://localhost:4001/api/user/allUsers")
+             const res = await axios.get("https://practice-be-nd0k.onrender.com/api/user/allUsers")
              setUsers(res.data.users)
         } catch (error) {
             console.log(error.message);          
@@ -26,7 +26,7 @@ const DisplayUser = () => {
     const handleSubmit = async(e) =>{
         e.preventDefault()
         try {
-              const res = await axios.post("http://localhost:4001/api/user/create",newUser)
+              const res = await axios.post("https://practice-be-nd0k.onrender.com/api/user/create",newUser)
               alert("user created successfully")              
               setUsers(res.data.users)
               setNewUser({name:"",password:"",age:"",education:""})
@@ -41,7 +41,7 @@ const DisplayUser = () => {
     }
     const handleDelete = async(id) =>{
         try {
-           await axios.delete(`http://localhost:4001/api/user/${id}`)
+           await axios.delete(`https://practice-be-nd0k.onrender.com/api/user/${id}`)
            alert("user deleted successfully")
            setDeleteUser((preData)=>preData.filter((item)=>item._id !== id))
         } catch (error) {
